@@ -41,6 +41,7 @@ async function excuteRead() {
             console.log(result)
         }
     }
+    alert("~.~ complated! ~.~")
 }
 if (nobrs.length) {
     excuteRead();
