@@ -1,6 +1,6 @@
 var nobrs = document.getElementsByTagName('nobr');
 console.log(nobrs);
-function isCompletedListener(element) {
+function isCompleted(element) {
     var completed = element.getElementsByClassName('completed');
     return !!(completed && completed.length)
 }
@@ -11,15 +11,15 @@ function executeReadClass(nobr, order) {
     return new Promise((resolve, reject) => {
         interval = setInterval(() => {
             count++;
-            if (isCompletedListener(nobr)) {
+            if (isCompleted(nobr)) {
                 clearInterval(interval);
                 return resolve("执行成功：" + order);
-            } else if (count === 24) {
+            } else if (count === 60) {
                 clearInterval(interval);
                 return resolve("执行失败" + order);
             }
             (function () { console.log("==执行阅读任务== 当前任务No:" + order); })()
-        }, 5000);
+        }, 2000);
     });
 }
 async function excuteRead() {
