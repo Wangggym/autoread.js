@@ -26,10 +26,15 @@ function executeReadClass(nobr, order) {
     });
 }
 function getReadTime() {
-    var readTimeString = document.getElementById('w_lms_content').contentWindow.document.getElementsByTagName('table')[1].getElementsByTagName('td')[0].innerText
-    var patt1 = /习[0-9]+秒/;
-    var patt2 = /[0-9]+/;
-    var readTime = Number(readTimeString.match(patt1)[0].match(patt2)[0]) + 120;
+    var readTime = 5 //设置最低阅读时间
+    try {
+        var readTimeString = document.getElementById('w_lms_content').contentWindow.document.getElementsByTagName('table')[1].getElementsByTagName('td')[0].innerText
+        var patt1 = /习[0-9]+秒/;
+        var patt2 = /[0-9]+/;
+        readTime = Number(readTimeString.match(patt1)[0].match(patt2)[0]) + 120;
+    } catch (error) {
+
+    }
     console.log(`预计需要阅读时间:${readTime}`);
     return readTime;
 }
