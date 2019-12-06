@@ -12,7 +12,8 @@
   
   4.看见打印出nobars后说明开启成功
   
+  ![image](https://github.com/walkinMrwang/online_learning_automatic_reading_script/blob/image/01.png)
   
-  
+  [image](https://github.com/walkinMrwang/online_learning_automatic_reading_script/blob/image/02.png)
   
   
